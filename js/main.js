@@ -10,3 +10,12 @@ function makeSquares(numOfSquares, container) {
 
 let container = document.getElementById("square-container");
 makeSquares(16, container);
+
+let squares = document.querySelectorAll(".square");
+
+for (let i = 0; i < squares.length; i++) {
+  const square = squares[i];
+  square.addEventListener("mouseover", function() {
+    square.classList.add("hovered");
+  });
+}
