@@ -20,11 +20,30 @@ header {
   margin-bottom: 2rem;
 }
 
+button {
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+input {
+  padding: .5rem;
+}
+
+/* ===== HEADER ===== */
+#num-of-squares-across__label {
+  display: block;
+}
+#clear-btn {
+  float: right;
+}
+
+/* ===== MAIN ===== */
 #main {
   display: block;
   margin: 0 auto;
 }
 
+/* ===== ETCH-A-SKETCH ===== */
 #etcha-a-sketch__wrapper {
   position: relative;
 }
@@ -42,6 +61,7 @@ header {
 
 #square-container {
   display: grid;
+  background: #808080;
   grid-gap: 0;
   /* grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr); */
@@ -96,7 +116,7 @@ header {
 
 /* ====== ANIMATIONS ====== */
 .shake {
-  animation: .5s linear .1s 5 alternate shake;
+  animation: .35s linear .1s 5 alternate shake;
 }
 @keyframes shake {
   0% {
@@ -114,7 +134,7 @@ header {
 }
 
 .drawn.clear {
-  animation: 2.25s linear forwards clear;
+  animation: 1.5s linear forwards clear;
 }
 @keyframes clear {
   0% {

@@ -11,7 +11,10 @@
 <body>
   <header>
     <h1 id="page-title">Etch-A-Sketch</h1>
-    <button id="clear-btn">Clear</button>
+    <label id="num-of-squares-across__label" for="num-of-squares-across">Number of squares across</label>
+    <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
+    <button id="buildGrid" onClick=makeSquares()>Build Grid</button>
+    <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
   </header>
   <main id="main">
     <div id="etch-a-sketch__wrapper">
