@@ -6,6 +6,10 @@ function makeSquares() {
   }
   let numOfSquaresInput = document.getElementById("num-of-squares-across");
   let numOfSquaresWide = numOfSquaresInput.value;
+  if (numOfSquaresWide < 1 || numOfSquaresWide > 100) {
+    alert("Please enter a number between 1 and 100.");
+    return;
+  }
   let gridSize = numOfSquaresWide * (numOfSquaresWide * .75);
 
   for (let i=0; i < gridSize; i++) {
@@ -19,7 +23,7 @@ function makeSquares() {
     console.log(`Pushed square #${i}`);
   }
 
-  document.getElementById("square-container").setAttribute('style', `grid-template-columns: repeat(${numOfSquaresWide}, 1fr); grid-template-rows: repeat((${numOfSquaresWide * .75}, 1fr);`);
+  document.getElementById("square-container").setAttribute('style', `grid-template-columns: repeat(${numOfSquaresWide}, 1fr); grid-template-rows: repeat(${numOfSquaresWide * .75}, 1fr);`);
 
 }
 
@@ -52,3 +56,44 @@ function clearContainer() {
 }
 
 makeSquares();
+
+function a11yClick(e){
+  if(e.type === 'click'){
+    return true;
+  }
+  else if(e.type === 'keypress'){
+    var code = e.charCode || e.keyCode;
+    if((code === 32)|| (code === 13)){
+      return true;
+    }
+  }
+  else{
+    return false;
+  }
+}
+
+const container = document.getElementById("square-container");
+const buildGridBtn = document.getElementById("build-grid-btn");
+("num-of-squares-across");
+const buildGridForm = document.getElementById("build-grid-form");
+const gridToggle = document.getElementById("grid-toggle");
+buildGridBtn.addEventListener("keydown", function(e) {
+  if (a11yClick(e)) {
+    makeSquares();
+  }
+});
+buildGridForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  if (a11yClick(e)) {
+    makeSquares();
+  }
+});
+gridToggle.addEventListener("click", function(e) {
+  if (a11yClick(e)) {
+    if (!container.classList.contains("grid-active")) {
+      container.classList.add("grid-active");
+    } else {
+      container.classList.remove("grid-active");
+    }
+  }
+});

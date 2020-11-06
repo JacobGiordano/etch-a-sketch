@@ -4,17 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title>Etch-A-Sketch</title>
+  <title>EtchASketch®</title>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <h1 id="page-title">Etch-A-Sketch</h1>
-    <label id="num-of-squares-across__label" for="num-of-squares-across">Number of squares across</label>
-    <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
-    <button id="buildGrid" onClick=makeSquares()>Build Grid</button>
-    <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
+    <div class="row">
+      <form action="#" id="build-grid-form">
+        <label id="num-of-squares-across__label" for="num-of-squares-across">Number of squares across (1 - 100)</label>
+        <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
+        <button id="build-grid-btn" onClick=makeSquares()>Build Grid</button>
+      </form>
+    </div>
+    <div class="row">
+      <div id="header-controls">
+        <button id="grid-toggle">Show grid</button>
+        <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
+      </div>
+    </div>
   </header>
   <main id="main">
     <div id="etch-a-sketch__wrapper">

@@ -29,12 +29,24 @@ input {
   padding: .5rem;
 }
 
+.row {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
 /* ===== HEADER ===== */
+#build-grid-form {
+  display: inline-block;
+}
 #num-of-squares-across__label {
   display: block;
+  margin-bottom: .5rem;
 }
-#clear-btn {
-  float: right;
+#header-controls {
+  display: block;
+  width: 100%;
+  margin-top: .5rem;
 }
 
 /* ===== MAIN ===== */
@@ -53,6 +65,10 @@ input {
   position: relative;
   background: #ec0303;
   padding: 10%;
+  border-top: 1.6vw solid#fa5555;
+  border-left: 1.6vw solid#c70606;
+  border-right: 1.6vw solid#c70606;
+  border-bottom: 1.6vw solid#a50505;
   border-radius: .5rem;
   width: 100%;
   height: 70vw;
@@ -65,6 +81,10 @@ input {
   grid-gap: 0;
   /* grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr); */
+  border-top: .75vw solid#a50505;
+  border-left: .75vw solid#c70606;
+  border-right: .75vw solid#c70606;
+  border-bottom: .75vw solid#fa5555;
   border-radius: 2%;
   overflow: hidden;
   position: relative;
@@ -79,6 +99,12 @@ input {
 
 .square:hover {
   background:#b9b9b9;
+}
+
+.grid-active .square {
+  border-right: 1px solid #424242;
+  border-bottom: 1px solid #424242;
+
 }
 
 .drawn {
