@@ -92,8 +92,10 @@ gridToggle.addEventListener("click", function(e) {
   if (a11yClick(e)) {
     if (!container.classList.contains("grid-active")) {
       container.classList.add("grid-active");
+      gridToggle.textContent = "Hide grid";
     } else {
       container.classList.remove("grid-active");
+      gridToggle.textContent = "Show grid";
     }
   }
 });

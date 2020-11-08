@@ -29,15 +29,30 @@ input {
   padding: .5rem;
 }
 
+input[type="number"] {
+  max-width: 60px;
+}
+
+input[type="color"] {
+  padding: 0 .15rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+
 .row {
   display: block;
   position: relative;
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+.row input, .row button {
+  margin-right: .25rem;
 }
 
 /* ===== HEADER ===== */
 #build-grid-form {
-  display: inline-block;
+  display: inline;
 }
 #num-of-squares-across__label {
   display: block;
@@ -119,11 +134,24 @@ input {
 
 .knob {
   display: inline-block;
-  background: #ffffff;
+  background: linear-gradient( #ffffff, #d6d6d6);
   padding: 3.5%;
   border: 2px dotted #ec0303;
   border-radius: 50%;
   position: absolute;
+  box-shadow: 0 6px 1px 2px #a50505;
+}
+.knob::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: transparent;
+  padding: 40%;
+  border: 2px solid #b4b4b4;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 580px) {
   .knob {
@@ -148,7 +176,7 @@ input {
 
 /* ====== ANIMATIONS ====== */
 .shake {
-  animation: .35s linear .1s 5 alternate shake;
+  animation: .25s linear .1s 5 forwards shake;
 }
 @keyframes shake {
   0% {
@@ -156,6 +184,9 @@ input {
   }
   25% {
     transform: translateX(-2rem);
+  }
+  50% {
+    transform: translateX(0);
   }
   75% {
     transform: translateX(2rem);

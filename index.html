@@ -17,12 +17,13 @@
         <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
         <button id="build-grid-btn" onClick=makeSquares()>Build Grid</button>
       </form>
+      <button id="grid-toggle">Show grid</button>
+      <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
     </div>
     <div class="row">
-      <div id="header-controls">
-        <button id="grid-toggle">Show grid</button>
-        <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
-      </div>
+      <label for="color-selection">Color: </label>
+      <input type="color" name="color-selection" id="color-selection" value="#424242">
+      <label for="opacity-input">Opacity: <input id="opacity-input" type="number" placeholder="100" value="100"> %</label>
     </div>
   </header>
   <main id="main">
