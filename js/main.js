@@ -14,13 +14,8 @@ function makeSquares() {
 
   for (let i=0; i < gridSize; i++) {
     let square = document.createElement("div");
-    // square.innerText = (i + 1);
     container.appendChild(square).classList.add("square");
-    square.addEventListener("mouseover", function() {
-      square.classList.add("drawn");
-    });
-
-    console.log(`Pushed square #${i}`);
+    square.addEventListener("mouseover", draw);
   }
 
   document.getElementById("square-container").setAttribute('style', `grid-template-columns: repeat(${numOfSquaresWide}, 1fr); grid-template-rows: repeat(${numOfSquaresWide * .75}, 1fr);`);
@@ -55,7 +50,11 @@ function clearContainer() {
   }
 }
 
-makeSquares();
+function draw() {
+  this.classList.add("drawn");
+  // let opacity = Number(this.style.opacity) + .1;
+  // this.style.opacity = opacity;
+}
 
 function a11yClick(e){
   if(e.type === 'click'){
@@ -71,6 +70,8 @@ function a11yClick(e){
     return false;
   }
 }
+
+makeSquares();
 
 const container = document.getElementById("square-container");
 const buildGridBtn = document.getElementById("build-grid-btn");

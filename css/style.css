@@ -98,10 +98,8 @@ input[type="color"] {
 
 #square-container {
   display: grid;
-  background: #808080;
+  background: linear-gradient(#808080, #757575);
   grid-gap: 0;
-  /* grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr); */
   border-top: .75vw solid#a50505;
   border-left: .75vw solid#c70606;
   border-right: .75vw solid#c70606;
@@ -114,10 +112,6 @@ input[type="color"] {
   cursor: crosshair;
 }
 
-.square {
-  background: #808080;
-}
-
 .square:hover {
   background:#b9b9b9;
 }
@@ -125,7 +119,6 @@ input[type="color"] {
 .grid-active .square {
   border-right: 1px solid #424242;
   border-bottom: 1px solid #424242;
-
 }
 
 .drawn {
