@@ -49,7 +49,7 @@ function clearContainer() {
         thisSquare.classList.remove("drawn", "clear");
       }
       clearTimeout(opacityTimer);
-    }, 1500);
+    }, 1250);
   }
 }
 
