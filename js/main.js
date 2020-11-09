@@ -47,6 +47,8 @@ function clearContainer() {
       for (let k=0; k < drawnSquares.length; k++) {
         let thisSquare = drawnSquares[k];
         thisSquare.classList.remove("drawn", "clear");
+        thisSquare.style.opacity = null;
+        thisSquare.style.background = null;
       }
       clearTimeout(opacityTimer);
     }, 1250);
@@ -55,8 +57,15 @@ function clearContainer() {
 
 function draw() {
   this.classList.add("drawn");
-  // let opacity = Number(this.style.opacity) + .1;
-  // this.style.opacity = opacity;
+  let useBuildUp = document.getElementById("use-build-up").checked;
+  if (useBuildUp) {
+    let opacity = Number(this.style.opacity) + .1;
+    this.style.opacity = opacity;
+  } else {
+    this.style.opacity = 1;
+  }
+  let color = document.getElementById("color-selection").value;
+  this.style.background = color;
 }
 
 function a11yClick(e){
