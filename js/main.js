@@ -39,14 +39,17 @@ function clearContainer() {
       let thisSquare = drawnSquares[i];
       thisSquare.classList.add("clear");
     }
-    const timer = setTimeout(function(){
+    const shakeTimer = setTimeout(function(){
       frame.classList.remove("shake");
-      for (let j=0; j < drawnSquares.length; j++) {
-        let thisSquare = drawnSquares[j];
+      clearTimeout(shakeTimer);
+    }, 3000);
+    const opacityTimer = setTimeout(function(){
+      for (let k=0; k < drawnSquares.length; k++) {
+        let thisSquare = drawnSquares[k];
         thisSquare.classList.remove("drawn", "clear");
       }
-      clearTimeout(timer);
-    }, 3500);
+      clearTimeout(opacityTimer);
+    }, 1500);
   }
 }
 

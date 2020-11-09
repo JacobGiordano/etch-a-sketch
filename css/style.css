@@ -190,19 +190,13 @@ input[type="color"] {
 }
 
 .drawn.clear {
-  animation: 1.5s linear forwards clear;
+  animation: 1.25s linear forwards clear;
 }
 @keyframes clear {
   0% {
-    background:#424242;
-  }
-  20% {
-    background:#424242;
-  }
-  80% {
-    background: #808080;
+    opacity: 1
   }
   100% {
-    background: #808080;
+    opacity: 0;
   }
 }
