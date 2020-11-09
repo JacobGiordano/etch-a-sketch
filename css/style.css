@@ -195,10 +195,10 @@ input[type="color"] {
   animation: 1.25s linear forwards clear;
 }
 @keyframes clear {
-  0% {
-    opacity: 1;
+  from {
+    opacity: initial;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }

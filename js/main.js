@@ -59,12 +59,19 @@ function draw() {
   this.classList.add("drawn");
   let useBuildUp = document.getElementById("use-build-up").checked;
   if (useBuildUp) {
-    let opacity = Number(this.style.opacity) + .1;
+    let opacity = Number(this.style.opacity) + .15;
     this.style.opacity = opacity;
   } else {
     this.style.opacity = 1;
   }
-  let color = document.getElementById("color-selection").value;
+  let useRandomColor = document.getElementById("use-random-color").checked;
+  let color;
+  if (useRandomColor) {
+    // https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+    color = '#'+Math.floor(Math.random()*16777215).toString(16);
+  } else {
+    color = document.getElementById("color-selection").value; 
+  }
   this.style.background = color;
 }
 
