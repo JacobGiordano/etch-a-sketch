@@ -10,28 +10,29 @@
 </head>
 <body>
   <header>
-    <h1 id="page-title">Etch-A-Sketch</h1>
-    <div class="row">
+    <h1 id="page-title" class="center">Etch-A-Sketch</h1>
+    <div class="row center">
+      <p>To begin, set the number of pixel across, then build the grid. The grid can be anywhere from 1-100 across and is designed to maintain a 4:3 aspect ratio.</p>
       <form action="#" id="build-grid-form">
-        <label id="num-of-squares-across__label" for="num-of-squares-across">Enter the number of pixels across, 1 - 100, then click "Build Grid"</label>
+        <label class="off-screen" id="num-of-squares-across__label" for="num-of-squares-across">Enter the number of pixels across, 1 - 100</label>
         <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
         <button id="build-grid-btn" onClick=makeSquares()>Build Grid</button>
       </form>
-      <button id="grid-toggle">Show grid</button>
       <button id="clear-btn" onClick=clearContainer()>Clear Board</button>
-    </div>
-    <div class="row">
-      <label for="color-selection">Color: </label>
-      <input type="color" name="color-selection" id="color-selection" value="#424242">
-      <input type="checkbox" name="use-random-color" id="use-random-color">
-      <label for="use-random-color">Use random color</label>
-      <input type="checkbox" name="use-build-up" id="use-build-up">
-      <label for="use-build-up">Use build up</label>
-      <input type="checkbox" name="use-eraser" id="use-eraser">
-      <label for="use-eraser">Erase</label>
     </div>
   </header>
   <main id="main">
+    <div class="row center">
+      <label class="off-screen" for="color-selection">Color: </label>
+      <input type="color" name="color-selection" id="color-selection" value="#424242" title="Selected color">
+      <button id="grid-toggle" class="alt">Show grid</button>
+      <input class="off-screen" type="checkbox" name="use-random-color" id="use-random-color">
+      <label class="button alt" for="use-random-color">Use random color</label>
+      <input class="off-screen" type="checkbox" name="use-build-up" id="use-build-up">
+      <label class="button alt" for="use-build-up">Use build up</label>
+      <input class="off-screen" type="checkbox" name="use-eraser" id="use-eraser">
+      <label class="button alt" for="use-eraser">Erase</label>
+    </div>
     <div id="etch-a-sketch__wrapper">
       <div id="etch-a-sketch-body">
         <img id="logo" src="./images/etch-a-sketch-logo.png" alt="Etch-A-Sketch Logo">

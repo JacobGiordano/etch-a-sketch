@@ -10,23 +10,63 @@ html {
 }
 
 body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 2rem auto;
   padding: 0 2rem;
   line-height: 1;
   max-width: 980px;
+  background: #f7f7f7;
 }
 
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+button, input, label {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+button, input.off-screen + label {
+  background: #0283a3;
+  color: #fff;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #0283a3;
+  border-radius: 2px;
 }
 
 button {
   padding: .5rem 1rem;
-  cursor: pointer;
+}
+
+button.alt, .button.alt {
+  background: #fff;
+  color: #0283a3;
+  border-color: #0283a3;
+  border-width: 1px;
+}
+
+input.off-screen, label.off-screen {
+  position: absolute;
+  left: -1000%;
+}
+
+input.off-screen + label {
+  padding: .5rem 1rem;
+  vertical-align: middle;
+}
+
+input.off-screen:checked + label {
+  background: #0283a3;
+  color: #fff;
+  border: 1px solid #0283a3;
 }
 
 input {
-  padding: .5rem;
+  padding: .45rem .5rem;
+  border: 1px solid #424242;
+  border-radius: 2px;
 }
 
 input[type="number"] {
@@ -35,8 +75,13 @@ input[type="number"] {
 
 input[type="color"] {
   padding: 0 .15rem;
-  height: 2rem;
-  vertical-align: middle;
+  width: 2.15rem;
+  height: 2.1rem;
+  vertical-align: bottom;
+}
+
+p {
+  line-height: 1.5;;
 }
 
 .row {
@@ -46,11 +91,24 @@ input[type="color"] {
   margin-bottom: 1rem;
 }
 
-.row input, .row button {
+.row * {
+  margin-bottom: .75rem;
+}
+
+.row input, .row button, .row.input.off-screen + label, .button.alt {
+  display: inline-block;
   margin-right: .25rem;
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 /* ===== HEADER ===== */
+#page-title {
+  margin-bottom: 2rem;
+}
+header button, header input {
+  margin-bottom: .5rem;
+}
 #build-grid-form {
   display: inline;
 }
@@ -64,9 +122,6 @@ input[type="color"] {
   margin-top: .5rem;
 }
 
-header button, header input {
-  margin-bottom: .5rem;
-}
 
 /* ===== MAIN ===== */
 #main {
@@ -75,8 +130,16 @@ header button, header input {
 }
 
 /* ===== ETCH-A-SKETCH ===== */
-#etcha-a-sketch__wrapper {
+#etch-a-sketch__wrapper {
+  display: block;
   position: relative;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 679px) {
+  #etch-a-sketch__wrapper {
+    margin-top: 0;
+  }
 }
 
 #etch-a-sketch-body {
@@ -162,6 +225,12 @@ header button, header input {
 .knob-2 {
   right: .75rem;
   bottom: .85rem;
+}
+
+/* ====== UTILITY CLASSES ===== */
+
+.center {
+  text-align: center;
 }
 
 /* ====== ANIMATIONS ====== */
