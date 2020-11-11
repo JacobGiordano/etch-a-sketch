@@ -30,10 +30,28 @@ function removeSquares() {
   }
 }
 
+function opacityToZero(drawnSquares) {
+  for (let j=0; j < drawnSquares.length; j++) {
+    let thisSquare = drawnSquares[j];
+    if (thisSquare.style.opacity > 0) {
+      thisSquare.style.opacity = Number(thisSquare.style.opacity) - .05;
+    }
+  }
+}
+
 function clearContainer() {
   const frame = document.getElementById("etch-a-sketch__wrapper");
   if (!frame.classList.contains("shake")) {
     frame.classList.add("shake");
+    let counter = 0;
+    let limit = 20;
+    let myVar = setInterval(function() {
+      opacityToZero(drawnSquares);
+      counter++;
+      if (counter === limit) {
+        clearInterval(myVar);
+      }
+    }, 50);
     const drawnSquares = document.querySelectorAll(".drawn");
     for (let i=0; i < drawnSquares.length; i++) {
       let thisSquare = drawnSquares[i];
@@ -42,16 +60,7 @@ function clearContainer() {
     const shakeTimer = setTimeout(function(){
       frame.classList.remove("shake");
       clearTimeout(shakeTimer);
-    }, 3000);
-    const opacityTimer = setTimeout(function(){
-      for (let k=0; k < drawnSquares.length; k++) {
-        let thisSquare = drawnSquares[k];
-        thisSquare.classList.remove("drawn", "clear");
-        thisSquare.style.opacity = null;
-        thisSquare.style.background = null;
-      }
-      clearTimeout(opacityTimer);
-    }, 1250);
+    }, 2500);
   }
 }
 
@@ -59,15 +68,17 @@ function draw() {
   this.classList.add("drawn");
   let useBuildUp = document.getElementById("use-build-up").checked;
   if (useBuildUp) {
-    let opacity = Number(this.style.opacity) + .15;
-    this.style.opacity = opacity;
+    if (this.style.opacity < 1) {
+      let opacity = Number(this.style.opacity) + .1;
+      this.style.opacity = opacity;
+    }
   } else {
     this.style.opacity = 1;
   }
   let useRandomColor = document.getElementById("use-random-color").checked;
   let color;
   if (useRandomColor) {
-    // https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+    //Random color generation from: https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
     color = '#'+Math.floor(Math.random()*16777215).toString(16);
   } else {
     color = document.getElementById("color-selection").value; 

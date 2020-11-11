@@ -64,6 +64,10 @@ input[type="color"] {
   margin-top: .5rem;
 }
 
+header button, header input {
+  margin-bottom: .5rem;
+}
+
 /* ===== MAIN ===== */
 #main {
   display: block;
@@ -113,18 +117,10 @@ input[type="color"] {
   cursor: crosshair;
 }
 
-.square:hover {
-  background:#b9b9b9;
-}
-
 .grid-active .square {
   border-right: 1px solid #424242;
   border-bottom: 1px solid #424242;
 }
-
-/* .drawn {
-  background: #424242;
-} */
 
 .knob {
   display: inline-block;
@@ -192,7 +188,7 @@ input[type="color"] {
 
 /* .drawn.clear { */
 .clear {
-  animation: 1.25s linear forwards clear;
+  /* animation: 1.25s linear forwards clear; */
 }
 @keyframes clear {
   from {
