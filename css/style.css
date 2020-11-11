@@ -185,16 +185,3 @@ header button, header input {
     transform: translateX(0rem);
   }
 }
-
-/* .drawn.clear { */
-.clear {
-  /* animation: 1.25s linear forwards clear; */
-}
-@keyframes clear {
-  from {
-    opacity: initial;
-  }
-  to {
-    opacity: 0;
-  }
-}

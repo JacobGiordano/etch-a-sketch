@@ -13,7 +13,7 @@
     <h1 id="page-title">Etch-A-Sketch</h1>
     <div class="row">
       <form action="#" id="build-grid-form">
-        <label id="num-of-squares-across__label" for="num-of-squares-across">Number of squares across (1 - 100)</label>
+        <label id="num-of-squares-across__label" for="num-of-squares-across">Enter the number of pixels across, 1 - 100, then click "Build Grid"</label>
         <input id="num-of-squares-across" name="Number of squares across" type="number" value=16>
         <button id="build-grid-btn" onClick=makeSquares()>Build Grid</button>
       </form>
@@ -27,6 +27,8 @@
       <label for="use-random-color">Use random color</label>
       <input type="checkbox" name="use-build-up" id="use-build-up">
       <label for="use-build-up">Use build up</label>
+      <input type="checkbox" name="use-eraser" id="use-eraser">
+      <label for="use-eraser">Erase</label>
     </div>
   </header>
   <main id="main">
